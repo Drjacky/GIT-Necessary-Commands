@@ -1,5 +1,3 @@
-# GIT-Necessary-Commands
-
 git init
 
 touch .gitignore
@@ -17,6 +15,21 @@ git add -A stages All
 git add . stages new and modified, without deleted
 git add -u stages modified and deleted, without new
 )
+
+
+
+To set your username for a specific repository : 
+git config user.name "Billy Everyteen"
+# Set a new name
+git config user.name
+# Verify the setting
+
+To set your username for every repository
+git config --global user.name "Billy Everyteen"
+# Verify the setting
+git config --global user.name
+Billy Everyteen
+
 
 
 
@@ -54,9 +67,9 @@ git commit --amend
 
 vaghti ke ye taghyire dobare too ye file ee midi ke commit karde budi, age 
 
-khasti too hamun comment dobare befrestish, dastoore bala, save mikoni, khodesh 
+khasti too hamun comment dobare befrestish, dastoore bala, save mikoni, 
 
-commit mikone dige.
+khodesh commit mikone dige.
 ____________________
 Add single file:
 git add hello.html
