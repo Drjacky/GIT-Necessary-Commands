@@ -31,7 +31,11 @@ git config --global user.name
 Billy Everyteen
 
 
+__________
 
+git ls-files file_name --error-unmatch; echo $?
+will exit with 1 if file is not tracked
+__________
 
 
 
@@ -45,7 +49,7 @@ git log
 git ls-tree --name-only -r     sha1 of commit
 
 
-
+_________
 to change .git folder to somewhere else:
 nano .bashrc
 nano /etc/environment
@@ -65,11 +69,7 @@ __________________________________________________
 edit a commit:
 git commit --amend
 
-vaghti ke ye taghyire dobare too ye file ee midi ke commit karde budi, age 
-
-khasti too hamun comment dobare befrestish, dastoore bala, save mikoni, 
-
-khodesh commit mikone dige.
+vaghti ke ye taghyire dobare too ye file ee midi ke commit karde budi, age khasti too hamun comment dobare befrestish, dastoore bala, save mikoni, khodesh commit mikone dige.
 ____________________
 Add single file:
 git add hello.html
@@ -82,3 +82,7 @@ List/Content of changes, but not commited yet:
 git status
 git diff --cached   OR      git diff --staged
 _______________________________________________________
+
+To rollback to a specific commit:
+
+git reset --hard commit_sha
