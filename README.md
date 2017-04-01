@@ -6,90 +6,105 @@ __________
 Specifies intentionally untracked files to ignore
 ```
 touch .gitignore
-```
-__________
-
 nano gitignore
 
-/out
-
+/FolderNameToIgnore
+```
+__________
+Add file contents to the index
+```
 git add -A . && git commit -m "yourMessage"
-
+```
 
 (
-git add -A is equivalent to  git add .; git add -u:::::
+git add -A is equivalent to  git add .; git add -u
 git add -A stages All
 git add . stages new and modified, without deleted
 git add -u stages modified and deleted, without new
 )
-
-
-
-To set your username for a specific repository : 
-git config user.name "Billy Everyteen"
-# Set a new name
-git config user.name
-# Verify the setting
-
-To set your username for every repository
-git config --global user.name "Billy Everyteen"
-# Verify the setting
-git config --global user.name
-Billy Everyteen
-
-
 __________
-
+Your full name to be recorded in any newly created commits
+```
+git config user.name "Dr.jacky"
+```
+Verify the setting
+```
+git config user.name
+```
+To set your username for every repository
+```
+git config --global user.name "Dr.jacky"
+```
+Verify the setting
+```
+git config --global user.name
+```
+__________
+Show information about files in the index and the working tree
+```
 git ls-files file_name --error-unmatch; echo $?
+```
 will exit with 1 if file is not tracked
 __________
-
-
-
-to remove a folder from repo:
-
+Remove files/folder from the working tree and from the index
+```
 git rm -r --cached myFolder
-
-
-to list all files in a commmit:
+```
+__________
+Show commit logs
+```
 git log
-git ls-tree --name-only -r     sha1 of commit
-
-
-_________
-to change .git folder to somewhere else:
+```
+__________
+List the contents of a commit:
+```
+git log
+git ls-tree --name-only -r     commit_sha
+```
+__________
+To change .git folder path to somewhere else:
+```
 nano .bashrc
 nano /etc/environment
 
-add
 GIT_DIR=/      path to where you want .git folder to be
 GIT_WORK_TREE=/       path to project source codes
-
-
+```
 OR
-
-
+```
 git --git-dir=/to/be/ --work-tree=.
-
-
-__________________________________________________
-edit a commit:
+```
+__________
+If you commit and then realize you forgot to stage the changes in a file you wanted to add to this commit, you can do something like this:
+```
+git commit -m 'initial commit'
+git add forgotten_file
 git commit --amend
-
-vaghti ke ye taghyire dobare too ye file ee midi ke commit karde budi, age khasti too hamun comment dobare befrestish, dastoore bala, save mikoni, khodesh commit mikone dige.
-____________________
-Add single file:
+```
+__________
+Add a single file contents to the index
+```
 git add hello.html
 git commit -m "First Commit"
-
+```
 Add Folder:
+```
 git add <folder>/*
-______________________________
-List/Content of changes, but not commited yet:
+```
+__________
+List/Content of changes, but not commited yet (working tree status):
+```
 git status
-git diff --cached   OR      git diff --staged
+```
+```
+git diff --cached
+```
+```
+git diff --staged
+```
 _______________________________________________________
 
 To rollback to a specific commit:
-
+```
 git reset --hard commit_sha
+```
