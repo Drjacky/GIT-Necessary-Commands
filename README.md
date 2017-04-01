@@ -1,6 +1,13 @@
+Create an empty Git repository or reinitialize an existing one
+```
 git init
-
+```
+__________
+Specifies intentionally untracked files to ignore
+```
 touch .gitignore
+```
+__________
 
 nano gitignore
 
