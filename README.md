@@ -108,3 +108,12 @@ To rollback to a specific commit:
 ```
 git reset --hard commit_sha
 ```
+_______________________________________________________
+Rename pushed branch name:
+```
+git branch -m new-name
+git branch -m old-name new-name
+git push origin :old-name new-name
+git push origin -u new-name
+
+```
